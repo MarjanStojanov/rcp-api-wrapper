@@ -10,7 +10,6 @@ from objects.metafields import Metafields
 from objects.onetimes import Onetimes
 
 
-
 class RechargeAPI(object):
 	def __init__(self, token):
 		self.token = token
@@ -24,7 +23,6 @@ class RechargeAPI(object):
 		self.checkout_handle = Checkouts()
 		self.metafield_handle = Metafields()
 		self.onetime_handle = Onetimes()
-
 
 	@property
 	def headers(self):

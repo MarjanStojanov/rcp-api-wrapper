@@ -9,10 +9,12 @@ from objects.checkouts import Checkouts
 from objects.metafields import Metafields
 from objects.onetimes import Onetimes
 
+from objects.rest import REST
+
 
 class RechargeAPI(object):
 	def __init__(self, token):
-		self.token = token
+		REST.token = token
 		self.customer_handle = Customers()
 		self.address_handle = Addresses()
 		self.subscription_handle = Subscriptions()
@@ -31,3 +33,4 @@ class RechargeAPI(object):
 			"Accept":"application/json",
 			"Content-Type":"application/json",
 		}
+

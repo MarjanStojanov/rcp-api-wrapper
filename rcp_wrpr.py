@@ -15,6 +15,7 @@ from objects.rest import REST
 class RechargeAPI(object):
 	def __init__(self, token):
 		REST.token = token
+		self.token = token
 		self.customer_handle = Customers()
 		self.address_handle = Addresses()
 		self.subscription_handle = Subscriptions()
@@ -33,4 +34,3 @@ class RechargeAPI(object):
 			"Accept":"application/json",
 			"Content-Type":"application/json",
 		}
-

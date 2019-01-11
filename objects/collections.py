@@ -1,5 +1,7 @@
 from objects.rest import REST
 import requests, json
 
-class Metafields(REST):
+
+
+class Collections(REST):
 	pass

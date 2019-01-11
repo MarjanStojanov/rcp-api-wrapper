@@ -1,8 +1,13 @@
+import requests, json
+from objects.helpers import query_builder
+
+
 class REST:
 	token = None
+	
 	def __init__(self):
 		self.object_class = self.__class__.__name__.lower()
-		self.url = 'https://api.rechargeapps.com/' + self.object_class + '/'
+		self.url = 'https://api.rechargeapps.com/' 
 
 	@property
 	def headers(self):
@@ -12,18 +17,54 @@ class REST:
 			"Content-Type":"application/json",
 		}
 
-	def update(self, id):
-		print('Updated: ' + self.url)
-		print(REST.token)
+	def create(self, data):
+		url = self.url + self.object_class + '/'
+		result = requests.post(url, json.dumps(data), headers=self.headers)
+		return result.content, result.status_code
 
-	def create(self, id):
-		print('Created: ')
 
-	def delete(self, id):
-		print('Deleted: ')
+	def update(self, id_, data):
+		url = self.url + self.object_class + '/'+ str(id_)
+		result = requests.put(url, json.dumps(data), headers=self.headers)	
+		return result.content, result.status_code
 
-	def count(self):
-		print(' count: ')
 
-	def list(self, JSON):
-		pass
+	def retrieve(self, id_):
+		url = self.url + self.object_class + '/' + str(id_)
+		result = requests.get(url, headers=self.headers)
+		return result.content, result.status_code
+
+
+	def delete(self, id_):
+		url = self.url + self.object_class + '/' + str(id_)
+		result = requests.request("DELETE", url, headers=self.headers)
+		return result.content, result.status_code
+
+
+	def list(self, *arg):	
+		
+		if arg != ():
+			data = query_builder(arg[0])
+			url = self.url + self.object_class + '?' + data
+		
+		else:
+			url = self.url + self.object_class + '?' 
+		
+		result = requests.get(url, headers=self.headers)
+		return result.content, result.status_code
+
+
+	def count(self, *arg):
+		url = self.url + self.object_class + '/count?'
+		if arg:
+			data = query_builder(arg[0])
+			url = self.url + self.object_class + '/count?' + data
+		 
+		result = requests.get(url, headers=self.headers)
+		return result.content, result.status_code
+
+
+
+	
+
+

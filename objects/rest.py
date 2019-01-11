@@ -26,7 +26,6 @@ class REST:
 
 	def update(self, id_, data):
 		url = self.url + self.object_class + '/'+ str(id_)
-		print(url)
 		result = requests.put(url, json.dumps(data), headers=self.headers)	
 		return result.content, result.status_code
 
@@ -72,14 +71,3 @@ class REST:
 	
 
 
-
-
-#check delay_charge_regen
-
-
-
-
-
-
-
-	#{'status': 'ACTIVE', 'created_at_min': '2018-12-12'}

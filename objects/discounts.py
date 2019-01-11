@@ -25,9 +25,3 @@ class Discounts(REST):
 
 		result = requests.put(url, data=json.dumps(data), headers=self.headers)
 		return result.content, result.status_code
-
-'''
-from rcp_wrpr import RechargeAPI as R
-r = R('33f88f1eb3bbe75c51e265d3bb5364178e01e753b3d864a5fc195464')
-r.discount_handle.remove_dicount(9668949, 25290714)	
-'''

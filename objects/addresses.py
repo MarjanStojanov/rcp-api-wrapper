@@ -43,14 +43,3 @@ class Addresses(REST):
 
 
 
-
-	
-#{"address1": "3030 Nebraska Avenue","address2": "","city": "Los Angeles","province": "California","first_name": "Mike","last_name": "Flynn","zip": "90404","company": "ReCharge","phone": "3103843698","country": "United States"}
-'''
-from rcp_wrpr import RechargeAPI as R
-r = R('abc123')
-r.address_handle.count({"cusotmer_id": "22749959", "status": "2"})	
-'''
-
-
-#{"address1": "3030 Nebraska Avenue","state": "California","zipcode": "90404","city": "santa monica"}

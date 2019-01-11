@@ -48,10 +48,4 @@ class Charges(REST):
 
 
 
-'''
-from rcp_wrpr import RechargeAPI as R
-r = R('abc123')
-r.checkout_handle.retrieve("09cb3d2bd7da4e279b628db7f385d584")
-'''
-
 

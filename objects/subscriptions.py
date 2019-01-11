@@ -45,10 +45,3 @@ class Subscriptions(REST):
 		return result.content, result.status_code
 
 
-
-
-"""
-from rcp_wrpr import RechargeAPI as R
-r = R('abc123')
-r.subscription_handle.cancel(33058484, "other")
-"""

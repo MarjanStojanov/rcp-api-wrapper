@@ -2,4 +2,7 @@
 venv
 env
 config.py
-config.json
+config.jso
+.DS_Store
+
+

@@ -12,7 +12,6 @@ class REST:
 	@property
 	def headers(self):
 		return {
-			"X-Recharge-Access-Token":self.token,
 			"X-Recharge-Access-Token":REST.token,
 			"Accept":"application/json",
 			"Content-Type":"application/json",

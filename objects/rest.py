@@ -4,7 +4,7 @@ from objects.helpers import query_builder
 
 class REST:
 	token = None
-
+	
 	def __init__(self):
 		self.object_class = self.__class__.__name__.lower()
 		self.url = 'https://api.rechargeapps.com/' 
@@ -62,8 +62,6 @@ class REST:
 		 
 		result = requests.get(url, headers=self.headers)
 		return result.content, result.status_code
-
-
 
 
 

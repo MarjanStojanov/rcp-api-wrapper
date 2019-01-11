@@ -14,6 +14,8 @@ from objects.rest import REST
 
 
 
+from objects.rest import REST
+
 
 class RechargeAPI(object):
 	def __init__(self, token):
@@ -30,8 +32,3 @@ class RechargeAPI(object):
 		self.metafield = Metafields()
 		self.collection = Collections()
 		self.product = Products()
-		
-		
-		
-		
-		
